@@ -1,30 +1,29 @@
-var $box = $('.box');
-var $boxshowhide = $('.btn-show-hide');
-var $diamond = $('.diamond');
-var $diamondmove = $('.btn-move');
-var $panel = $('.panel');
-var $panelcollapse = $('.btn-collapse-expand');
-var $circle = $('.circle');
-var $circlebounce = $('.btn-bounce');
-var $list = $('.list');
-var $listappend = $('.btn-append');
+var $btnShowHide = $('.btn-show-hide');
+var $btnMove = $('.btn-move');
+var $btnCollapseExpand = $('.btn-collapse-expand');
+var $btnBounce = $('.btn-bounce');
+var $btnAppend = $('.btn-append');
 
-$boxshowhide.on('click', function() {
-  $box.toggleClass('boxshowhide');
+$btnShowHide.on ('click', function (){
+  $('.box').toggleClass('is-clicked');
 });
 
-$diamondmove.on('click', function() {
-  $diamond.toggleClass('diamondmove');
+$btnMove.on ('click', function (){
+  $('.diamond').toggleClass('is-clicked2');
 });
 
-$panelcollapse.on('click', function() {
-  $panel.toggleClass('panelcollapse');
+$btnCollapseExpand.on ('click', function (){
+  $('.panel').toggleClass('is-clicked3');
 });
 
-$circlebounce.on('click', function() {
-  $circle.addClass('circlebounce');
-}); // animationend & removeClass
+$btnBounce.on ('click', function (){
+  $('.circle').toggleClass('is-clicked4');
+});
 
-$listappend.on('click', function() {
-  $list.addClass('listappend');
+$('circle').on('animationend', function (){
+  $('.circle').removeClass('is-clicked4');
+});
+
+$btnAppend.on('click', function (){
+  $('.list').append('<li>New List Item</li>');
 });

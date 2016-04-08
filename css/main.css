@@ -32,14 +32,9 @@ div {
   height: 100px;
   top: calc(50% - 50px);
   width: 200px;
-
   background-color: limegreen;
   opacity: 0;
-  transition: opacity .3s ease-out;
-}
-
-.boxshowhide {
-  opacity: 1;
+  transition: all .5s linear;
 }
 
 .diamond {
@@ -50,11 +45,7 @@ div {
 
   background-color: hotpink;
   transform: rotate(45deg);
-  /* transition: MOVE ?PIXELS TO THE LEFT; */
-}
-
-.diamondmove {
-
+  transition: all .5s linear;
 }
 
 .panel {
@@ -68,15 +59,12 @@ div {
 
   color: darkgoldenrod;
   text-align: center;
+  transition: all .5s linear;
 }
 
 .panel h2 {
   margin: 0;
   padding: 3rem 0;
-}
-
-.panelcollapse {
-
 }
 
 .circle {
@@ -86,10 +74,6 @@ div {
 
   background-color: orange;
   border-radius: 50%;
-}
-
-.circlebounce {
-
 }
 
 .list {
@@ -116,8 +100,61 @@ div {
   overflow: hidden;
 
   color: mediumpurple;
+  animation: slides .2s forwards ease;
 }
 
-.listappend {
+@keyframes slides {
+
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 1rem;
+  }
+}
+
+.is-clicked {
+  opacity: 1;
+}
+
+.is-clicked2 {
+  right: 50px;
+}
+
+.is-clicked3 {
+  max-height: 0;
+}
+
+.is-clicked4 {
+  animation: bounce 1s both;
+}
+
+@keyframes bounce {
+
+  0% {
+    top: 10px;
+    right: -100px;
+  }
+
+  25% {
+    top: 50px;
+  }
+
+  45% {
+    top: 30px;
+  }
+
+  65% {
+    top: 15px;
+  }
+
+  100% {
+    right: 100px;
+    top: 20px;
+  }
+}
+
+.is-clicked {
 
 }
